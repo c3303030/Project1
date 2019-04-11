@@ -1,8 +1,19 @@
 #include <stdio.h>
 
 int main() {
-git commit test 
-return 0;
-}
+    char* message = "Encrypt This! ZZZ";
+    int key = 5;
 
+    lower(n)
+    int n;
+    {
+        if ((n >=              ))
+        
+        
+        
+    }
+    
+
+
+   
 
