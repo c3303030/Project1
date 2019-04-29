@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 /* Ceaser/ rotational cipher
+// still reads white space. fix get and while statment
                                  encript:    Encrypt This ZZZ
 Takes plain test and produces cipher text using key (shift =5 ):  jshnpuyymnxeee
                   key= 5                  
@@ -37,12 +38,13 @@ Takes plain test and produces cipher text using key (shift =5 ):  jshnpuyymnxeee
        
         
        void  rotationalCipher(char* input, int key){                    // within this function cipertext is printed
-            int i= 0;               // index variable called i
+            int i= 0;               // input variable called i
             int cipherValue;
             char cipher;
              // through every single plain text character                    
-            while(input[i] != '\0' && strlen (input)-1 > i){        //   while imput i is not = to 0 and input -1 of i stop counting when reaches -1 or 0. ie no character indicate end of string.
-                cipherValue = ((int)input[i] - 97 + key)  %  26 + 97;    // WORK OUT!!!!! current letter would be plain text at position 'i'       // - 97 because eg a start at 97 and need to be 0 for roatation to work
+            while(input[i] != '\0' && strlen (input)-1 > i){        // dont understand 0 doesnt break code. while imput i is not = to 0 and input -1 of i stop counting when reaches -1 or 0. ie no character indicate end of string.
+                cipherValue = ((int)input[i] - 65 + key)  %  26 + 65;    //current letter would be plain text at position 'i'       // 65 is the initial value for A 
+                input[i]=32;
                 cipher = (char)(cipherValue);                       // char of cipher text    -->char)ciphertext = 'letter' 
                 i++;           // incremets  other wise it will just repeat the same values millions of times.
                 printf("%c", cipher);
@@ -54,8 +56,6 @@ Takes plain test and produces cipher text using key (shift =5 ):  jshnpuyymnxeee
       // cd /projects/yourproject title then  ./a.out in che
     
 } 
-
-
     
     
     
