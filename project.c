@@ -1,8 +1,8 @@
 
-#include <stdio.h> // fgit,stdin taking plain text
-#include <stdlib.h>
+#include <stdio.h> 
 #include<string.h>
 /* Ceaser/ rotational cipher
+How the cipher works.
                                  encript:    Encrypt This ZZZ
 Takes plain test and produces cipher text using key (shift =5 ):  jshnpuyymnxeee
                   key= 5                  
@@ -17,45 +17,43 @@ Takes plain test and produces cipher text using key (shift =5 ):  jshnpuyymnxeee
    */
 
 // Function ceiser ciper definition
-    void caesarCipher(char* plainText, int key);                       // dont return plain textinput (void)
+    void rotationalCipher(char* text, int key);                       // dont return plain textinput (void)
     
     int main(void){
         
         int key= 1;
-        char plainText[101];            // string called plain text
+        char text[101];            // string called plain text
         
         printf("Enter plain text to encrypt: ");
         
         // take input and store it in plain text variable using from fgets
-        fgets(plainText, sizeof (plainText), stdin);    //  give plain text in variable 'plainText'd                    //fget reads string of text with spaces. while scanf cannnot scan in a whole string
+        fgets(text, sizeof (text), stdin);    //  give plain text in variable 'plainText'd                    //fget reads string of text with spaces. while scanf cannnot scan in a whole string
         
         //print ciper text
             printf("ciper text is: ");
             
-            
-        caesarCipher(plainText, key);       
+        rotationalCipher(text, key);       
             
            return 0; 
     } 
        
         
-       void  caesarCipher(char* plainText, int key){                    // within this function cipertext is printed
+       void  rotationalCipher(char* text, int key){                    // within this function cipertext is printed
             int i= 0;               // index variable called i
             int cipherValue;
             char cipher;
              // through every single plain text character                    
-            while(plainText[i] != '\0' && strlen(plainText)-1 > i){ 
-                cipherValue = ((int)plainText[i] - 97 + key)  %  26 + 97;    // current letter would be palin text at position 'i'       // - 97 because eg a start at 97 and need to be 0 for roatation to work
+            while(text[i] != '\0' && strlen(text)-1 > i){ 
+                cipherValue = ((int)text[i] - 97 + key)  %  26 + 97;    // current letter would be palin text at position 'i'       // - 97 because eg a start at 97 and need to be 0 for roatation to work
                 cipher = (char)(cipherValue);                       // char of cipher text    -->char)ciphertext = 'letter' 
                 
                 printf("%c", cipher);
                 i++;
             
             }
-            printf("\n");
+         
       
     
 } 
-
 
 
